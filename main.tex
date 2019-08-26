@@ -1,0 +1,635 @@
+
+
+\documentclass[ border=0pt, a4paper, 11pt]{article}
+\usepackage{hyperref}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,amsmath,amsfonts,amssymb}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+%\usepackage{natbib}
+\pagestyle{fancy}
+\usetikzlibrary{positioning, shapes}
+\usepackage{xcolor}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\definecolor{pprime1}{RGB}{89,167,167}
+\definecolor{pprime2}{RGB}{45,164,170}
+\definecolor{pprime3}{RGB}{82,162,161}
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{transparent}
+\usetikzlibrary{patterns}
+\numberwithin{equation}{section}
+\usepackage{mathtools}
+\definecolor{forestgreen}{rgb}{0.0, 0.27, 0.13}
+\numberwithin{equation}{section}
+\usepackage{tikz}
+\usepackage{multirow}
+\newcommand{\Rho}{\textcolor{violet}{\rho'}}
+\renewcommand{\u}{\textcolor{red}{u'}}
+\renewcommand{\v}{\textcolor{green}{v'}}
+\newcommand{\w}{\textcolor{blue}{w'}}
+\newcommand{\p}{\textcolor{cyan}{p'}}
+\newcommand{\T}{\textcolor{pink}{T'}}
+\newcommand{\Mu}{\textcolor{magenta}{\mu'}}
+\newcommand{\Kappa}{\textcolor{yellow}{\kappa'}}
+%\newcommand{\Rho}{\textcolor{black}{\rho'}}
+%\renewcommand{\u}{\textcolor{black}{u'}}
+%\renewcommand{\v}{\textcolor{black}{v'}}
+%\newcommand{\w}{\textcolor{black}{w'}}
+%\newcommand{\p}{\textcolor{black}{p'}}
+%\newcommand{\T}{\textcolor{black}{T'}}
+%\newcommand{\Mu}{\textcolor{black}{\mu'}}
+%\newcommand{\Kappa}{\textcolor{black}{\kappa'}}
+\hypersetup{linkcolor=blue, colorlinks=true}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+        \begin{pgfonlayer}{background}
+            \shade [top color =pprime3!100!white,bottom color=pprime1!10!white, shading angle=0] (-5,-28) rectangle (19,-0.8); 
+     \node at (7.9,0.8) {\includegraphics[width=\paperwidth]{pprime_banner.jpg}};  
+     \node at (1.3,-7) {\includegraphics[width=4.2cm]{polytechnique3}};  
+     \node at (1.3,-5) {\includegraphics[width=4cm]{SorbonneScience.png}};
+        \end{pgfonlayer}
+    \end{tikzpicture}
+    
+\vspace*{4.3cm}
+
+\hspace{4.29cm}
+\begin{minipage}{0.68\textwidth}
+            \Huge{\textbf{Engineering Department}}\\
+            \huge{\textbf{Fluid Mechanics}}\\[0.5cm]
+            \huge{\textbf{Master's Thesis}}\\
+            \noindent\rule{11.5cm}{0.4pt}\\
+            \huge{\textbf{Stability study in a turbulent channel flow with acoustic\\ material wall}}
+\end{minipage}\\[1.5cm]
+
+\hspace{4.29cm}\begin{minipage}{0.34\textwidth}
+    \begin{flushleft}
+        \underline{Author :}\\
+         \Large{Franck BAZILLE}\\
+
+    \end{flushleft} 
+\end{minipage}
+\begin{minipage}{0.34\textwidth}
+    \begin{flushright}
+        \underline{Supervisor :}\\
+        \Large{David MARX }\\
+    \end{flushright} 
+\end{minipage}\\[2cm]
+
+\hspace{0.76\textwidth}\large{Year 2018 - 2019}\\
+
+
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fancyhead[C]{
+\begin{tikzpicture}[remember picture, overlay]
+        \begin{scope}
+              \shade [right color =pprime1!10!white,left color=pprime2!90!white, shading angle=30] (-10.6,-0.5) rectangle (13.6,1.1); 
+        \end{scope}
+    \end{tikzpicture}
+    \textbf{\leftmark}}
+    
+\fancyhead[R]{}
+\fancyfoot[C]{\begin{tikzpicture}[remember picture, overlay]
+                \begin{scope}
+                    \shade [left color =pprime1!10!white,right color=pprime2!90!white, shading angle=30] (-10.4,-1) rectangle (10.8,0.5); 
+                \end{scope}
+              \end{tikzpicture}
+            \textbf{\thepage}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{abstract}
+le résumé
+\end{abstract}
+
+\begin{center}
+    \noindent\rule{12cm}{0.4pt}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Introduction}
+Democratisation of air transport and the expansion of passengers number has lead to a constant growth of air traffic between $5\%$ and $7\%$ every year. Aeronautic industry must adapt the constant flow of new passengers by creating new aircrafts that can transport more passengers, therefore they must have powerfuller engines with bigger thrust.  in the needs of airlines and therefore aircraft.
+
+To adapt to these new needs manufacturers, invented more and more powerful reactors. But that implies an increase in noise. To overcome this problem, aircraft nacelles have been equipped with layers of material that partially absorb noise. Therefore acoustic liners have been stuck on the ducts surfaces. Unfortunately, experiments highlighted the creation of unstable, possibly absolute, that totally modifies the flow and have a negative impact on it. 
+
+This study will try to investigate the behaviour of such material. Through a linear stability analysis we will model the flow in a channel with acoustic walls.
+
+
+
+
+The evolution of To adapt the needs of  and industrial capabilities the aeronautic industry created motors more and more powerful. Yet the more powerful a propeller becomes, the noisier it gets.
+In order to reduce the noise generated by engines and turbo-reactor,
+
+
+
+
+During a preview thesis, made by Robin Sebastian,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Model}
+
+\begin{figure}
+   \includegraphics[width=\textwidth]{eigenvalue_perrtub.PNG}
+   \caption{ titre \hyperref[test]{ceci n'est pas une pipe}}
+\end{figure}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Equation}
+We now want to express the set of following governing equations and boundary conditions used in the resolution according to our hypothesis:
+\begin{flalign}
+& \frac{\partial\rho}{\partial t} +\frac{\partial}{\partial x_j}(\rho u_j) = 0 \\
+%
+& \rho \frac{\partial u_i}{\partial t} + \rho u_j\frac{\partial u_i}{\partial x_j} = -\frac{\partial}{\partial x_i}p +\frac{1}{Re}\frac{\partial}{\partial x_j}\tau_{ij} \\
+%
+&\frac{\partial p}{\partial t}+u_i \frac{\partial p}{\partial x_i} +\gamma p \frac{\partial u_i}{\partial x_i}  =  +\frac{1}{RePr}\frac{\partial}{\partial x_j}\left(\kappa \frac{\partial T}{\partial x_j}\right) + \frac{\gamma-1}{Re}\tau_{ij}\frac{\partial u_i}{\partial x_j} \\ 
+%
+&\rho = \gamma\frac{p}{T} \\ \nonumber
+%
+with  & \quad \tau_{ij} = 2\mu\left[\frac{1}{2}\left(\frac{\partial u_j}{\partial x_i}+\frac{\partial u_i}{\partial x_j}\right)-\frac{1}{3}\frac{\partial u_m}{\partial x_m}\delta_{ij}\right]\\\nonumber
+\end{flalign}
+
+To do so we decompose all generic quantities $q(x,y,z,t)$ into a base state  $q_o(x,y)$ ans a fluctuation $q'(x,y,z,t)$. The studied phenomena consists of a set of coupled 3D equations with the variable coefficient $\beta$ and $\omega$. these coefficients depend on the basic flow that change strongly in the chordwise direction $\vec{x}$ and the normal dierction $\vec{y}$, yet not in the spanwise direction $\vec{z}$. Therefore the variable $z$ and $t$ can be used to divide the solution, so that the general expression of the quantities is expressed in the form :
+\begin{align}
+q(x,y,z,t) &= q_o(x,y) + q'(x,y)e^{i(\beta z -\omega t)} \\ \nonumber
+%\mu(x,y,z,t) &= \mu_o(x,y) + \mu'(x,y)e^{i(\beta z -\omega t)} \\
+%u(x,y,z,t) &= u_o(x,y) + u'(x,y)e^{i(\beta z -\omega t) }  \\
+%v(x,y,z,t) &= v_o(x,y) + v'(x,y)e^{i(\beta z -\omega t)}   \\
+%p(x,y,z,t) &= p_o(x,y) + p'(x,y)e^{i(\beta z -\omega t)}   \\
+%T(x,y,z,t) &= T_o(x,y) + T'(x,y)e^{i(\beta z -\omega t)}   \\
+%\kappa(x,y,z,t) &= \kappa_o(x,y) + \kappa'(x,y)e^{i(\beta z -i\omega t )}  \\
+\end{align}
+In this study we will consider the following variables :
+\begin{equation}
+q = \begin{pmatrix} \: 
+\u \: 
+\v \: 
+\w \: 
+\T \: 
+\p \: 
+\end{pmatrix}^T   
+\end{equation}
+$\Rho$ , $\Mu$ and $\Kappa$ are either variables. We use the following second order equation of state that we incorporate into equation to erase $\Rho$ from all equation : 
+$\Rho = \frac{\gamma\p}{T_o} - \frac{\rho_o \T }{T_o} $ 
+To eliminate $\Mu$ and $\Kappa$ we use its derivatives with respect to $\T$ : 
+\begin{flalign}
+\Mu &= \frac{\partial  \mu_o }{\partial T_o}\T ;\quad
+\Kappa = \frac{\partial  \kappa_o }{\partial T_o}\T;\\ 
+ %
+ %
+\frac{\partial  \kappa_o }{\partial T_o} & = \frac{ Cp }{ Pr}\frac{\partial  \mu_o }{\partial T_o} = 0,7\frac{ Cp }{ Pr} T_o^{-0,3} \quad ; \quad
+\frac{\partial  \mu_o }{\partial T_o} = 0,7 ~ T_o^{-0,3} \quad ; \\
+\frac{\partial^2  \kappa_o }{\partial T_o^2} & = \frac{ Cp }{ Pr}\frac{\partial^2  \mu_o }{\partial T_o^2} = -0,21\frac{ Cp }{ Pr} T_o^{-1,3} \quad ; \quad
+\frac{\partial  \mu_o }{\partial T_o} = -0,21 ~ T_o^{-1,3} \quad ;
+\end{flalign}
+We substitute this new expression in Navier-Stokes compressible equations. We linearize with respect to small perturbations those equations with a first order fluctuation.
+
+Equations are nondimensionalized with the speed of sound and temperature at the wall so that we can have the new variables :
+\begin{align*}
+\rho = \rho_{ref}\tilde{\rho} \quad
+\mu = \mu_{ref}\tilde{\mu} \quad
+U = c_{ref}\tilde{U}  \quad
+p = \rho_{ref}c^2_{ref}\tilde{p}  \quad
+T = \frac{c^2_{ref}}{\gamma r}\tilde{T} \quad
+&\kappa = \kappa_{ref}\tilde{\kappa} \\
+(x,y) = l_{ref}(\tilde{x},\tilde{y}) \quad
+t =\frac{l_{ref}}{c_{ref}}\tilde{t} \quad   
+Re =\frac{l_{ref}\rho_{ref}c_{ref}}{\mu_{ref}} \quad  
+Pr =\frac{\mu_{ref}Cp}{K_{ref}} \quad  
+\end{align*}
+The set of non dimensionless governing equations for conservation of mass, momentum (along $\vec{x}$,$\vec{y}$,$\vec{z}$) and  energy is written in the following :
+
+Momentum equation along x :    
+  \begin{multline}   
+ \\\rho_o\frac{\partial \u }{\partial t} + \rho_o\u \frac{\partial u_o}{\partial x}+\rho_ou_o\frac{\partial \u }{\partial x}+\rho_ov_o\frac{\partial \u }{\partial y} + \rho_ow_o\frac{\partial \u }{\partial z} 
+ %
+  +\rho_o\v \frac{\partial u_o}{\partial y}
+ %
+ + \bigg(\frac{\gamma}{T_o} \p  - \frac{\rho_o}{T_o} \T \bigg) \bigg[u_o\frac{\partial u_o}{\partial x}+v_o\frac{\partial u_o}{\partial y}\bigg]\\
+ %
+ =-\frac{\partial \p }{\partial x} 
+ %
+ + \frac{1}{Re} \bigg[\frac{\partial\mu_o}{\partial x}\bigg( \frac{4}{3}\frac{\partial \u}{\partial x} - \frac{2}{3} \bigg(\frac{\partial \v}{\partial y}+ \frac{\partial \w}{\partial z}\bigg)    \bigg) +\frac{\partial\mu_o}{\partial y}\bigg( \frac{\partial \u}{\partial y}+ \frac{\partial \v}{\partial x}   \bigg)\\
+ %
+ +\mu_o\bigg[ \frac{4}{3}\frac{\partial^2 \u}{\partial x^2}+\frac{\partial^2 \u }{\partial  y^2}+ \frac{\partial^2 \u }{ \partial z^2}+\frac{\partial^2 \v }{\partial x \partial y}+\frac{\partial^2 \w }{\partial x \partial z}-\frac{2}{3}\bigg(\frac{\partial^2 \v}{\partial x\partial y}+\frac{\partial^2 \w}{\partial x\partial z}\bigg)\bigg] \\ 
+ %
++\bigg(\frac{\partial  \mu_o }{\partial T_o}\frac{\partial \T }{\partial x} + \frac{\partial  \mu_o^2 }{\partial T_o^2}\frac{\partial T_o }{\partial x} \T \bigg)\left( \frac{4}{3} \frac{\partial u_o}{\partial x} - \frac{2}{3}\frac{\partial v_o}{\partial y}\bigg) +\bigg(\frac{\partial  \mu_o }{\partial T_o}\frac{\partial \T }{\partial y} + \frac{\partial  \mu_o^2 }{\partial T_o^2}\frac{\partial T_o }{\partial y} \T \bigg)\bigg(\frac{\partial v_o}{\partial x} + \frac{\partial u_o}{\partial y}\bigg)\\
+%
++\bigg(\frac{\partial  \mu_o }{\partial T_o}\frac{\partial \T }{\partial z} + \frac{\partial  \mu_o^2 }{\partial T_o^2}\frac{\partial T_o }{\partial z} \T \bigg) \frac{\partial w_o}{\partial x} \right)  
+ %
+ + \frac{\partial  \mu_o }{\partial T_o}\T \left(\frac{4}{3} \frac{\partial^2 u_o}{\partial x^2}-\frac{2}{3} \frac{\partial^2 v_o}{\partial x\partial y} + \frac{\partial^2 v_o}{\partial x \partial y} + \frac{\partial^2 u_o}{\partial y^2}        \right)  \bigg]\\
+         \label{xmomentum}
+\end{multline}
+
+Momentum equation along y :
+\begin{multline}
+\\\rho_o\frac{\partial \v }{\partial t} 
+%
++\rho_ou_o\frac{\partial \v }{\partial x} + \rho_o\v \frac{\partial v_o}{\partial y}+\rho_ov_o\frac{\partial \v }{\partial y}+ \rho_ow_o\frac{\partial \v }{\partial z}
+%
++\rho_o\u \frac{\partial v_o}{\partial x}
+%
++ \bigg(\frac{\gamma}{T_o} \p  - \frac{\rho_o}{T_o} \T\bigg)\bigg[v_o\frac{\partial v_o}{\partial y} + u_o \frac{ \partial v_o} {\partial x}\bigg] \\
+%
+=-\frac{\partial \p }{\partial y} 
+%
+ + \frac{1}{Re} \bigg[\frac{\partial\mu_o}{\partial x}\bigg( \frac{\partial \u}{\partial y}+ \frac{\partial \v}{\partial x}   \bigg) +\frac{\partial\mu_o}{\partial y}\bigg( \frac{4}{3}\frac{\partial \v}{\partial y} - \frac{2}{3} \bigg(\frac{\partial \u}{\partial x}+ \frac{\partial \w}{\partial z}\bigg)    \bigg)\\
+ %
+ +\mu_o\bigg[ \frac{\partial^2 \v}{\partial x^2}+\frac{\partial^2 \u }{\partial x\partial  y}+ \frac{\partial^2 \v }{ \partial z^2}+\frac{4}{3}\frac{\partial^2 \v }{ \partial y^2}+\frac{\partial^2 \w }{\partial y \partial z}-\frac{2}{3}\bigg(\frac{\partial^2 \u}{\partial x\partial y}+\frac{\partial^2 \w}{\partial y\partial z}\bigg)\bigg] \\ 
+ %
++\bigg(\frac{\partial  \mu_o }{\partial T_o}\frac{\partial \T }{\partial x} + \frac{\partial  \mu_o^2 }{\partial T_o^2}\frac{\partial T_o }{\partial x} \T \bigg)\bigg(\frac{\partial v_o}{\partial x} + \frac{\partial u_o}{\partial y}\bigg)
+%
++\bigg(\frac{\partial  \mu_o }{\partial T_o}\frac{\partial \T }{\partial y} + \frac{\partial  \mu_o^2 }{\partial T_o^2}\frac{\partial T_o }{\partial y} \T \bigg)\bigg( \frac{4}{3} \frac{\partial v_o}{\partial y} - \frac{2}{3}\frac{\partial u_o}{\partial x}\bigg) \\
+%
++\bigg(\frac{\partial  \mu_o }{\partial T_o}\frac{\partial \T }{\partial z} + \frac{\partial  \mu_o^2 }{\partial T_o^2}\frac{\partial T_o }{\partial z} \T \bigg) \frac{\partial w_o}{\partial y} 
+ %
+ + \frac{\partial  \mu_o }{\partial T_o}\T \left(\frac{\partial^2 v_o}{\partial x^2}-\frac{2}{3} \frac{\partial^2 u_o}{\partial x\partial y} + \frac{\partial^2 u_o}{\partial x \partial y} + \frac{4}{3} \frac{\partial^2 v_o}{\partial y^2} \right) \bigg]\\
+      \label{ymomentum}
+\end{multline}
+
+Momentum equation along z :
+\begin{multline}
+ \\\rho_o\frac{\partial \w }{\partial t} 
+ %
+ + \rho_ou_o\frac{\partial \w }{\partial x}+\rho_ov_o\frac{\partial \w }{\partial y}+\rho_ow_o\frac{\partial \w }{\partial z} 
+ %
+ + \rho_o\u \frac{\partial w_o}{\partial x}+\rho_o\v \frac{\partial w_o}{\partial y}
+ %
+ +\bigg( \frac{\gamma}{T_o} \p  - \frac{\rho_o}{T_o}\T\bigg)\bigg[  u_o\frac{\partial w_o}{\partial x}+ v_o\frac{\partial w_o}{\partial y} \bigg]\\
+%
+=-\frac{\partial \p }{\partial z} 
+%
++ \frac{1}{Re} \bigg[\frac{\partial\mu_o}{\partial x}\bigg( \frac{\partial \u}{\partial z}+ \frac{\partial \w}{\partial x} \bigg) +\frac{\partial\mu_o}{\partial y}\bigg( \frac{\partial \v}{\partial z} + \frac{\partial \w}{\partial y} \bigg)\\
+ %
+ +\mu_o\bigg[ \frac{\partial^2 \w}{\partial x^2}+\frac{\partial^2 \v }{\partial y\partial  z}+ \frac{\partial^2 \w }{ \partial y^2}+\frac{\partial^2 \u }{ \partial x \partial z}+\frac{4}{3}\frac{\partial^2 \w }{ \partial z^2}-\frac{2}{3}\bigg(\frac{\partial^2 \u}{\partial x\partial z}+\frac{\partial^2 \v}{\partial y\partial z}\bigg)\bigg] \\ 
+ %
++\bigg(\frac{\partial  \mu_o }{\partial T_o}\frac{\partial \T }{\partial x} + \frac{\partial  \mu_o^2 }{\partial T_o^2}\frac{\partial T_o }{\partial x} \T \bigg)\frac{\partial w_o}{\partial x}
+%
++\bigg(\frac{\partial  \mu_o }{\partial T_o}\frac{\partial \T }{\partial y} + \frac{\partial  \mu_o^2 }{\partial T_o^2}\frac{\partial T_o }{\partial y} \T \bigg)\frac{\partial w_o}{\partial y} \\
+%
+-\frac{2}{3}\bigg(\frac{\partial  \mu_o }{\partial T_o}\frac{\partial \T }{\partial z} + \frac{\partial  \mu_o^2 }{\partial T_o^2}\frac{\partial T_o }{\partial z} \T \bigg) \bigg(\frac{\partial u_o}{\partial x} +\frac{\partial v_o}{\partial y} \bigg)
+ %
+ + \frac{\partial  \mu_o }{\partial T_o}\T \left(\frac{\partial^2 w_o}{\partial x^2} +\frac{\partial^2 w_o}{\partial y^2} \right) \bigg]\\
+       \label{zmomentum}
+\end{multline}
+
+Energy equation :
+\begin{multline}
+ \\\frac{\partial p }{\partial t}
+ %
+ +\u\frac{\partial p_o }{\partial x}+\v\frac{\partial p_o }{\partial y} +u_o\frac{\partial \p }{\partial x}+v_o\frac{\partial \p }{\partial y}+ w_o\frac{\partial \p }{\partial z} + \gamma p_o\bigg(\frac{\partial \u }{\partial x}+\frac{\partial \v }{\partial y}+\frac{\partial \w }{\partial z}\bigg) +\gamma \p\bigg(\frac{\partial u_o }{\partial x}+\frac{\partial v_o }{\partial y}\bigg)\\
+ %
+ = -\frac{1}{RePr} \bigg[\frac{\partial  \kappa_o^2 }{\partial T_o^2} \T \bigg(\bigg( \frac{\partial  T_o }{\partial x}\bigg)^2+ \bigg(\frac{\partial T_o}{\partial y}\bigg)^2 \bigg)
+ %
++ \frac{\partial  \kappa_o }{\partial T_o} \T\bigg(  \frac{\partial^2 T_o}{\partial x^2} + \frac{\partial^2 T_o}{\partial y^2} \bigg)
+ %
+ + 2 \bigg(\frac{\partial \kappa_o}{\partial x}\frac{\partial \T }{\partial x}+ \frac{\partial \kappa_o}{\partial y}\frac{\partial \T }{\partial y}\bigg)\\
+ %
+ +\kappa_o\bigg(\frac{\partial^2 \T }{\partial x^2} +\frac{\partial^2 \T }{\partial y^2} + \frac{\partial^2 \T }{\partial z^2}\bigg)\bigg]
+ %
+ + \frac{\gamma-1}{Re}\bigg[ \mu_o\bigg( \frac{\partial \u }{\partial x}\left(\frac{4}{3}\frac{\partial u_o}{\partial x}-\frac{2}{3}\frac{\partial v_o}{\partial y}  \right)  + \frac{\partial \u }{\partial y} \bigg(\frac{\partial v_o}{\partial x} + \frac{\partial u_o}{\partial y} \bigg) + \frac{\partial \u }{\partial z} \frac{\partial w_o}{\partial x}\\
+ %
+ + \frac{\partial \v }{\partial x} \bigg(\frac{\partial u_o}{\partial y} +  \frac{\partial v_o}{\partial x} \bigg) +\frac{\partial \v }{\partial y}\left(\frac{4}{3}\frac{\partial v_o}{\partial y} -\frac{2}{3} \frac{\partial u_o}{\partial x} \right)  + \frac{\partial \v }{\partial z}\frac{\partial w_o}{\partial y}\\
+ %
+ + \frac{\partial \w }{\partial x} \frac{\partial w_o}{\partial x} + \frac{\partial \w }{\partial y} \frac{\partial w_o}{\partial y} -\frac{2}{3}\frac{\partial \w }{\partial z}\left( \frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}  \right) 
+ %
+ +\frac{\partial u_o}{\partial x}\bigg(\frac{4}{3}\frac{\partial \u }{\partial x} -\frac{2}{3} \bigg(\frac{\partial \v }{\partial y} +\frac{\partial \w }{\partial z}\bigg)\bigg) + \frac{\partial u_o}{\partial y} \bigg( \frac{\partial \v }{\partial x} +  \frac{\partial \u }{\partial y} \bigg)\\
+ %
+ + \frac{\partial v_o}{\partial x} \bigg( \frac{\partial \u }{\partial y} + \frac{\partial \v }{\partial x} \bigg) + \frac{\partial v_o}{\partial y}\left(\frac{4}{3}\frac{\partial \v }{\partial y}-\frac{2}{3} \bigg(\frac{\partial \u }{\partial x}+\frac{\partial \w }{\partial z}\bigg)\right) 
+ %
+ + \frac{\partial w_o}{\partial x} \bigg( \frac{\partial \u }{\partial z} + \frac{\partial \w }{\partial x} \bigg) + \frac{\partial w_o}{\partial y} \bigg( \frac{\partial \v }{\partial z} + \frac{\partial \w }{\partial y} \bigg)\bigg)\\
+ %
+ + \frac{\partial  \mu_o }{\partial T_o} \T \bigg( \frac{4}{3}\bigg(\frac{\partial  u_o }{\partial x} \bigg)^2 + \bigg(\frac{\partial  v_o }{\partial y} \bigg)^2 - \frac{4}{3}\frac{\partial  u_o }{\partial x}\frac{\partial  v_o }{\partial y} + \bigg(\frac{\partial  u_o }{\partial y} \bigg)^2 + \bigg(\frac{\partial  v_o }{\partial x} \bigg)^2 + \bigg(\frac{\partial  w_o }{\partial x} \bigg)^2 + \bigg(\frac{\partial w_o }{\partial y} \bigg)^2 + 2 \frac{\partial  u_o }{\partial y}\frac{\partial  v_o }{\partial x}  \bigg) \bigg]\\
+       \label{energy}
+\end{multline}
+
+Continuity equation :
+  \begin{equation}  
+ \rho_o\frac{\partial \u }{\partial x} + \u \frac{\partial \rho_o}{\partial x} + \rho_o\frac{\partial \v }{\partial y} + \v \frac{\partial \rho_o}{\partial y} + \rho_o\frac{\partial \w }{\partial z} +
+%
+\bigg[ \frac{\partial u_o}{\partial x}+ \frac{\partial v_o}{\partial y} + u_o \partial_x  + v_o \partial_y + w_o \partial_z +\partial_t \bigg]\bigg(\frac{\gamma}{T_o} \p - \frac{\rho_o}{T_o} \T \bigg) =0
+       \label{continuity}
+  \end{equation}  
+  
+  
+  réécrire:
+
+
+
+\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+From this set of equations we cvan determine the A and B matrices that will solve the following problem ( expression of each matrix member is expressed in annex 1) :\\
+faire lien annexe 
+
+\begin{equation}
+    [A] [q]= - \omega [B] [q]
+\end{equation}
+\begin{equation}
+with \quad A =   \begin{bmatrix} 
+  A_{11} & A_{12} &  A_{13} &  A_{14} & A_{15} \\
+   %%%%%%%%%
+    A_{21} & A_{22} & A_{23} & A_{24} & A_{25} \\
+     %%%%%%%%%
+      A_{31} & A_{32} & A_{33} & A_{34} & A_{35} \\
+       %%%%%%%%%
+        A_{41} & A_{42} & A_{43} & A_{44} & A_{45} \\
+         %%%%%%%%%
+          A_{51} & A_{52} & A_{53} & A_{54} & A_{55} \\
+
+\end{bmatrix};
+B =   \begin{bmatrix} 
+ i \rho_o I & 0 & 0 & 0 & 0 \\
+  0 & i \rho_o I & 0 & 0 & 0 \\   
+    0 & 0 & i \rho_o I & 0 & 0 \\  
+     0  & 0 & 0 & 0 &  i I   \\  
+      0 & 0 & 0 & -i \rho_o  I & i \gamma I  \\  
+
+\end{bmatrix}  
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Validation exercise}
+To make the final computation for our problem it is necessary to be assured that the equation model is giving good results. To do so there is a validation exercise in the literature found in multiples articles (Lin & Malik reference) (theofilis & colonus reference). The objective is to compute specific a eigenvalue and eigenvector given in the article as
+
+\subsection{Base flow}
+The exercise has a precise base flow. To find it we must find a steady solution to the set of equations :
+\begin{flalign}
+& \frac{1}{T_o}(U_o^2+V_oU_o') = 1 +\frac{\partial \mu}{\partial T_o}T_o'U_o'+\mu U_o'' \\
+%
+& \frac{1}{T_o}V_oW_o' = \frac{\partial \mu}{\partial T_o}T_o'W_o' \\
+%
+& U_o-\frac{V_o}{T_o}T_o'+V_o'=0 \\
+%
+& \frac{\partial \mu}{\partial T_o}\frac{1}{Pr}T_o'^2 + \frac{\mu}{Pr}T_o''-\frac{T_o'V_o}{T_o}+(\gamma-1)M^2\muW_o' =0  \\\nonumber
+\end{flalign}
+This gives the $U_o, V_o, W_o$ and $T_o$ solution of the preview ordinary differential equation system.
+\subsection{Limit conditions for perturbation }
+On the following scheme, is described the mesh and the borders named $\Sigma_{0}$ , $\Sigma_{1}$ , $\Sigma_{2}$ and $\Sigma_{3}$. This mesh is used for the validation exercise where $\Sigma_{0}$ is a wall. It is separated from $\Sigma_{2}$, the infinite upstream border, by A hundred boundary layers thickness. 
+
+\begin{center}
+   \includegraphics[scale=0.4]{mesh.pdf} 
+\end{center}
+
+\subsubsection{$\Sigma_{0}$ boundary conditions}
+On the wall we define a no-slip boundary condition for velocity , a constant temperature and no pressure gradient. We impose the following Dirichlet condition : $$ \u (x,y_{o}) =\v (x,y_{o})=\w (x,y_{o})=\T (x,y_{o})=0 $$
+We impose the following Neumann condition : $$ \frac{\partial \p}{\partial y} (x,y_{o}) =0 $$
+\subsubsection{$\Sigma_{1}$ boundary conditions}
+On the intrado we linearly extrapolate the perturbations that leave the domain.
+We express the linear extrapolation as :
+\begin{equation}
+q (x_{0},y) = \bigg(1+\frac{x_{0}-x_{1}}{x_{1}-x_{2}}\bigg) q (x_{1},y) -\bigg(\frac{x_{0}-x_{1}}{x_{1}-x_{2}}\bigg)
+q (x_{2},y) 
+\end{equation} 
+\subsubsection{$\Sigma_{2}$ boundary conditions}
+At the far-field upstream we consider that there s no perturbation so that all perturbations are zero . We impose the following Dirichlet condition : $$ \u (x,y_{n}) =\v (x,y_{n})=\w (x,y_{n})=\T (x,y_{n})=\p (x,y_{n})=0 $$
+\subsubsection{$\Sigma_{3}$ boundary conditions}
+On the extrado we linearly extrapolate the perturbations that leave the domain.
+We express the linear extrapolation as :
+\begin{equation}
+q (x_{n},y) = \bigg(1+\frac{x_{n}-x_{n-1}}{x_{n-1}-x_{n-2}}\bigg) q (x_{n-1},y) -\bigg(\frac{x_{n}-x_{n-1}}{x_{n-1}-x_{n-2}}\bigg)
+q (x_{n-2},y) 
+\end{equation} 
+
+\begin{tabular}{c c c c c c}
+  & \multicolumn{2}{c}{Symmetric modes} &\multicolumn{2}{c}{Antisymmetric modes} &\\
+  Mode & cr & ci & cr & ci &  \\
+  \multirow{2}{*}{1} & 0.35840982 & 0.0058532472 & 0.35791970 & 0.0040988667 & L\&M\\
+   & 0.35844351 & 0.0058549992 & 0.35798197 & 0.0040350861 & M\&B \\
+   & 0.35844071 & 0.0058546700 & 0.35795061 & 0.0041000000 & R\&S \\
+    \hline
+   \multirow{2}{*}{2} & 0.35743540 & 0.0023430006 & 0.35695687 & 0.0005857126 & L\&M \\
+   & 0.35864995  & 0.0026315145 & 0.35696405 & 0.0034044066 & M\&B\\
+   & /  & / & / & / & R\&S\\
+\end{tabular}\\
+
+ Those results are obtained with the conditions described in (ref: Rahbari & Scalo) \S III.D Table 2. : Ma=0.02, Re=800, $\beta$=0.255, Nx=Ny=48, Lx=Ly=100. The Mean error is of order $10^{-4}$.
+
+
+\section{Sparse Methods and Computation optimisation}
+
+The objective of a sparse matrix methods is to have very large Matrices that are mainly empty. The calculation is easier and quicker. Therefore, we express each Navier-Stokes equation at each point of the mesh.  In the validation exercise A is $61,5\%$ empty and B is $99,9\%$.
+
+\begin{equation*}
+q = \begin{pmatrix} \: 
+\u x_{n}y_{n} \dotsi \u x_{o}y_{n},
+\dotsi,
+\u x_{n}y_{o} \dotsi \u x_{o}y_{o}|
+\v x_{n}y_{n} \dotsi \v x_{o}y_{n},
+\v x_{n}y_{o} \dotsi \v x_{o}y_{o}|
+\w |
+\T |
+\p 
+\end{pmatrix}^T   
+\end{equation*}
+
+
+\section{Results and Analysis}
+\newpage
+\bibliographystyle{siam}
+\bibliography{biblio}
+\nocite{*}
+
+\section{Annex}
+\begin{flalign} 
+A11&=   \rho_o \frac{\partial u_o}{\partial x} +\rho_o u_o  \partial_x +\rho_o v_o \partial_y+  i \rho_o w_o \beta - \frac{1}{Re} \bigg [ \frac{4}{3}\frac{\partial\mu_o}{\partial x} \partial_x+ \frac{4}{3}\mu_o \partial_x_x + \frac{\partial \mu_o}{\partial y}\partial_y + \mu_o\partial_y_y  - \beta^2\mu_o \bigg]\\
+%
+A12&=   \rho_o \frac{\partial u_o}{\partial y} - \frac{1}{Re} \bigg[ -\frac{2}{3}\frac{\partial\mu_o}{\partial x} \partial_y +\frac{\partial\mu_o}{\partial y} \partial_x +\frac{\mu_o}{3} \partial_x_y \bigg] \\
+%
+A13&= - \frac{1}{Re} \bigg[ \frac{i\beta \mu_o}{3}\partial_x - \frac{2}{3}\frac{\partial\mu_o}{\partial x} i \beta  \bigg]\\
+%
+A14&= - \frac{\rho_o}{T_o} \bigg[u_o \frac{\partial u_o}{\partial x}+ v_o \frac{\partial u_o}{\partial y} \bigg] -\frac{1}{Re}\frac{\partial^2  \mu_o }{\partial T_o^2}\bigg[\frac{\partial T_o }{\partial x}\left( \frac{4}{3} \frac{\partial u_o}{\partial x} - \frac{2}{3}\frac{\partial v_o}{\partial y}\right) +\frac{\partial T_o }{\partial y}\bigg(\frac{\partial v_o}{\partial x} + \frac{\partial u_o}{\partial y}\bigg) \bigg] \nonumber \\
+%
+&-\frac{1}{Re}\frac{\partial  \mu_o }{\partial T_o}\bigg[\partial_x\left( \frac{4}{3} \frac{\partial u_o}{\partial x} - \frac{2}{3}\frac{\partial v_o}{\partial y}\right) +\partial_y\bigg(\frac{\partial v_o}{\partial x} + \frac{\partial u_o}{\partial y}\bigg) 
+%
++ \frac{4}{3} \frac{\partial^2 u_o}{\partial x^2}+\frac{1}{3} \frac{\partial^2 v_o}{\partial x\partial y} + \frac{\partial^2 u_o}{\partial y^2} + i \beta \frac{\partial w_o}{\partial x} \bigg] \\
+%
+A15&=  \frac{\gamma}{T_o}  \bigg[u_o \frac{\partial u_o}{\partial x}+ v_o \frac{\partial u_o}{\partial y} \bigg] + \partial_x \\[3mm]
+%
+%
+%
+%
+A21&=   \rho_o \frac{\partial v_o}{\partial x} - \frac{1}{Re} \bigg[ -\frac{2}{3}\frac{\partial\mu_o}{\partial y} \partial_x +\frac{\partial\mu_o}{\partial x} \partial_y +\frac{\mu_o}{3} \partial_x_y \bigg] \\
+%
+A22&=   \rho_o \frac{\partial v_o}{\partial y} +\rho_o u_o  \partial_x +\rho_o v_o \partial_y+  i \rho_o w_o \beta - \frac{1}{Re} \bigg [ \frac{4}{3}\frac{\partial\mu_o}{\partial y} \partial_y+\mu_o \partial_x_x + \frac{\partial \mu_o}{\partial x}\partial_x +  \frac{4}{3}\mu_o\partial_y_y  - \beta^2\mu_o \bigg]\\
+%
+A23&=- \frac{1}{Re} \bigg[ \frac{i\beta \mu_o}{3}\partial_y - \frac{2}{3}\frac{\partial\mu_o}{\partial y} i \beta  \bigg]\\
+%
+A24&=  - \frac{\rho_o}{T_o} \bigg[u_o \frac{\partial v_o}{\partial x}+ v_o \frac{\partial v_o}{\partial y} \bigg] -\frac{1}{Re}\frac{\partial^2  \mu_o }{\partial T_o^2}\bigg[\frac{\partial T_o }{\partial x}\bigg(\frac{\partial v_o}{\partial x} + \frac{\partial u_o}{\partial y}\bigg) +\frac{\partial T_o }{\partial y} \left( \frac{4}{3} \frac{\partial v_o}{\partial y} - \frac{2}{3}\frac{\partial u_o}{\partial x}\right) \bigg] \nonumber \\
+%
+&-\frac{1}{Re}\frac{\partial  \mu_o }{\partial T_o}\bigg[\partial_x\bigg(\frac{\partial v_o}{\partial x} + \frac{\partial u_o}{\partial y}\bigg)  +\partial_y\left( \frac{4}{3} \frac{\partial v_o}{\partial y} - \frac{2}{3}\frac{\partial u_o}{\partial x}\right)
+%
++ \frac{\partial^2 v_o}{\partial x^2}+\frac{1}{3} \frac{\partial^2 u_o}{\partial x\partial y} + \frac{4}{3} \frac{\partial^2 v_o}{\partial y^2} + i \beta \frac{\partial w_o}{\partial y} \bigg] \\
+%
+A25&= \frac{\gamma}{T_o}  \bigg[u_o \frac{\partial v_o}{\partial x}+ v_o \frac{\partial v_o}{\partial y} \bigg] + \partial_y \\[3mm]
+%
+A31&=  \rho_o \frac{\partial w_o}{\partial x}-\frac{1}{Re} \bigg( \frac{i\mu_o\beta}{3}\partial_x + i\beta\frac{\partial \mu_o}{\partial x} \bigg)\\
+%
+A32&=  \rho_o \frac{\partial w_o}{\partial y}-\frac{1}{Re} \bigg( \frac{i\mu_o\beta}{3}\partial_y + i\beta\frac{\partial \mu_o}{\partial y} \bigg)\\
+%
+A33&= \rho_ou_o\partial_x +\rho_ov_o\partial_y + i \rho_ow_o \beta  -\frac{1}{Re} \bigg( \mu_o \bigg[ \partial_x_x+ \partial_y_y- \frac{4}{3} \beta^2  \bigg] + \frac{\partial \mu_o}{\partial x}\partial_x+  \frac{\partial \mu_o}{\partial y}\partial_y \bigg) \\
+%
+A34&=- \frac{\rho_o}{T_o} \bigg[u_o \frac{\partial w_o}{\partial x}+ v_o \frac{\partial w_o}{\partial y} \bigg] -\frac{1}{Re}\frac{\partial^2  \mu_o }{\partial T_o^2}\bigg[\frac{\partial T_o }{\partial x}\frac{\partial w_o}{\partial x} +\frac{\partial T_o }{\partial y} \frac{\partial w_o}{\partial y}  \bigg] \nonumber \\
+%
+&-\frac{1}{Re}\frac{\partial  \mu_o }{\partial T_o}\bigg[\partial_x\frac{\partial w_o}{\partial x}   +\partial_y \frac{\partial w_o}{\partial y} 
+%
++ \frac{\partial^2 w_o}{\partial x^2}+ \frac{\partial^2 w_o}{\partial y^2} -\frac{2}{3} i \beta \bigg( \frac{\partial u_o}{\partial x}  + \frac{\partial v_o}{\partial y}\bigg) \bigg] \\
+%
+A35&= \frac{\gamma}{T_o}  \bigg[u_o \frac{\partial w_o}{\partial x}+ v_o \frac{\partial w_o}{\partial y} \bigg] + i \beta \\[3mm]
+\end{flalign}
+%
+%
+%
+%
+\begin{flalign}
+A41&=\frac{\partial p_o}{\partial x} + \gamma p_o \partial_x
+%
+- \frac{\gamma-1}{Re} 2\mu_o\bigg[\partial_x \bigg(\frac{4}{3}\frac{\partial u_o}{\partial x} - \frac{2}{3}\frac{\partial v_o}{\partial y} \bigg)  +\partial_y \left( \frac{\partial u_o}{\partial y} + \frac{\partial v_o}{\partial x}\right) +  i \beta\frac{\partial w_o}{\partial x} \bigg]\\
+%
+A42&=  \frac{\partial p_o}{\partial y} + \gamma p_o \partial_y
+%
+- \frac{\gamma-1}{Re} 2\mu_o\bigg[\partial_x \left( \frac{\partial u_o}{\partial y} + \frac{\partial v_o}{\partial x}\right)  +\partial_y \bigg(\frac{4}{3}\frac{\partial v_o}{\partial y} - \frac{2}{3}\frac{\partial u_o}{\partial x} \bigg)  +  i \beta\frac{\partial w_o}{\partial y} \bigg]\\
+%
+A43&=i \beta \gamma p_o 
+%
+- \frac{\gamma-1}{Re} 2\mu_o\bigg[\partial_x  \frac{\partial w_o}{\partial x} +\partial_y \frac{\partial w_o}{\partial y} - \frac{2}{3}  i \beta\left( \frac{\partial u_o}{\partial x} + \frac{\partial v_o}{\partial y}\right) \bigg]\\
+%
+A44&=
+-\frac{1}{RePr} \bigg[ \frac{\partial^2  \kappa_o }{\partial T_o^2}\bigg( \bigg(\frac{\partial  T_o }{\partial x} \bigg)^2 + \bigg(\frac{\partial  T_o }{\partial y} \bigg)^2  \bigg)  + \frac{\partial  \kappa_o }{\partial T_o} \bigg( \frac{\partial^2 T_o}{\partial x^2} + \frac{\partial^2 T_o}{\partial y^2} \bigg)+ 2\frac{\partial \kappa_o}{\partial x}\partial_x+ 2\frac{\partial \kappa_o}{\partial y}\partial_y+\kappa_o\bigg(\partial_x_x +\partial_y_y - \beta^2 \bigg) \bigg] \nonumber \\ &
+%
+- \frac{\gamma-1}{Re} \frac{\partial  \mu_o }{\partial T_o} \bigg( \frac{4}{3}\bigg(\frac{\partial  u_o }{\partial x} \bigg)^2 + \bigg(\frac{\partial  v_o }{\partial y} \bigg)^2 - \frac{4}{3}\frac{\partial  u_o }{\partial x}\frac{\partial  v_o }{\partial y} + \bigg(\frac{\partial  u_o }{\partial y} \bigg)^2 + \bigg(\frac{\partial  v_o }{\partial x} \bigg)^2 + \bigg(\frac{\partial  w_o }{\partial x} \bigg)^2 + \bigg(\frac{\partial w_o }{\partial y} \bigg)^2 + 2 \frac{\partial  u_o }{\partial y}\frac{\partial  v_o }{\partial x}  \bigg) \\ 
+%
+A45&= u_o \partial_x + v_o \partial_y + i \beta w_o + \gamma\left( \frac{\partial u_o}{\partial x} + \frac{\partial v_o}{\partial y}\right)\\[3mm]
+%
+%
+%
+%
+%
+A51&=T_o\rho_o\partial_x +T_o \frac{\partial \rho_o}{\partial x}  \\
+%
+A52&= T_o \rho_o\partial_y +T_o \frac{\partial \rho_o}{\partial y} \\
+%
+A53&= T_o\rho_o i \beta \\
+%
+A54&= \frac{\rho_o}{T_o} \bigg( u_o\frac{\partial T_o }{\partial x}+v_o \frac{\partial T_o }{\partial y} \bigg) - \rho_o \bigg(\frac{\partial u_o }{\partial x}+ \frac{\partial v_o }{\partial y} + u_o \partial_x  + v_o \partial_y + w_o i \beta \bigg) - u_o\frac{\partial \rho_o }{\partial x} - v_o\frac{\partial \rho_o }{\partial y} \\
+%
+A55&= - \frac{\gamma}{T_o} \bigg( u_o\frac{\partial T_o }{\partial x}+v_o \frac{\partial T_o }{\partial y} \bigg) + \gamma \bigg(\frac{\partial u_o }{\partial x}+ \frac{\partial v_o }{\partial y} + u_o \partial_x  + v_o \partial_y + w_o i \beta \bigg)\\ \nonumber
+\end{flalign}
+ %
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+
+\begin{comment}
+$$
+\begin{bmatrix} 
+Ux_{n},y_{n} \\
+Ux_{n-1},y_{n} \\
+\vdots \\
+Ux_{0},y_{n}\\ \hline \vdots \\ \hline
+Ux_{n},y_{0} \\
+\vdots\\
+Ux_{0},y_{0}\\ \hline \hline
+Vx_{n},y_{n} \\
+\vdots\\
+\vdots\\
+Vx_{0},y_{0}\\ \hline \hline
+Wx_{n},y_{n} \\
+\vdots\\
+Wx_{0},y_{0}\\ \hline \hline
+Tx_{n},y_{n} \\
+\vdots\\
+Tx_{0},y_{0}\\ \hline \hline
+Px_{n},y_{n} \\
+\vdots\\
+Px_{0},y_{0}
+\end{bmatrix}
+$$
+
+
+Continuity equation :
+  \begin{equation}  
+-i \omega \rho' +  \rho_o\frac{\partial  u'}{\partial x}+ u'\frac{\partial \rho_o}{\partial x} + \rho_o\frac{\partial  v'}{\partial y}+ v'\frac{\partial \rho_o}{\partial y} + i  \beta\rho_o  w'+  \rho'\frac{\partial u_o}{\partial x}+u_o\frac{\partial  \rho'}{\partial x} +  \rho'\frac{\partial v_o}{\partial y}+v_o\frac{\partial  \rho'}{\partial y} +i \beta w_o \rho'=0
+       \label{continuity}
+  \end{equation}  
+     
+Momentum equation along x :    
+  \begin{multline}   
+ \\ -i \omega \rho_o  u' -i\omega u_o  \rho'
+ \\ + \rho_o u'\frac{\partial u_o}{\partial x}+\rho_ou_o\frac{\partial  u'}{\partial x}+ u'u_o\frac{\partial \rho_o}{\partial x} + \rho_o u'\frac{\partial v_o}{\partial y}+\rho_ov_o\frac{\partial  u'}{\partial y}+ u'v_o\frac{\partial \rho_o}{\partial y} +i \beta \rho_o w_o u'
+ \\ + \rho_ou_o\frac{\partial  u'}{\partial x}+\rho_o u'\frac{\partial u_o}{\partial x}+u_o u'\frac{\partial \rho_o}{\partial x} + \rho_ou_o\frac{\partial  v'}{\partial y}+\rho_o v'\frac{\partial u_o}{\partial y}+u_o v'\frac{\partial \rho_o}{\partial y} + i \beta \rho_o u_o w'
+ \\ +  \rho'u_o\frac{\partial u_o}{\partial x}+ \rho'u_o\frac{\partial u_o}{\partial x}+u_ou_o\frac{\partial  \rho'}{\partial x} +  \rho'u_o\frac{\partial v_o}{\partial y}+ \rho'v_o\frac{\partial u_o}{\partial y}+u_ov_o\frac{\partial  \rho'}{\partial y} + i \beta u_ow_o \rho'
+ \\=-\frac{\partial p'}{\partial x} +\frac{1}{Re}\bigg[ 2\frac{\partial \mu_o}{\partial x}   \frac{\partial  u'}{\partial x} - \frac{\partial\mu_o}{\partial x}\frac{2}{3}\left(\frac{\partial  u'}{\partial x}+\frac{\partial  v'}{\partial y}+ i \beta  w'\right) + \frac{\partial \mu_o}{\partial x}  \left( \frac{\partial  v'}{\partial x} + \frac{\partial  u'}{\partial y} \right)   + \frac{\partial \mu_o}{\partial x}  \left( \frac{\partial  w'}{\partial x} + i \beta u' \right) 
+ \\ + 2\frac{\partial  \mu'}{\partial x} \frac{\partial u_o}{\partial x} - \frac{2}{3}\frac{\partial \mu'}{\partial x}\left(\frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}\right) + \frac{\partial  \mu'}{\partial x}  \left( \frac{\partial v_o}{\partial x} + \frac{\partial u_o}{\partial y} \right)   + \frac{\partial  \mu'}{\partial x} \frac{\partial w_o}{\partial x}  
+ \\ + 2 \mu_o \frac{\partial^2  u'}{\partial x^2}  -\frac{2\mu_o}{3} \frac{\partial}{\partial x}\left(\frac{\partial  u'}{\partial x}+\frac{\partial  v'}{\partial y}+i \beta  w'\right) + \mu_o \left( \frac{\partial^2  v'}{\partial x^2} + \frac{\partial^2  u'}{\partial x \partial y} \right)   + \mu_o \left( \frac{\partial^2  w'}{\partial x^2} +i \beta \frac{\partial  u'}{\partial x} \right) 
+ \\ +  2 \mu' \frac{\partial^2 u_o}{\partial x^2} -\frac{2 \mu'}{3} \frac{\partial}{\partial x}\left(\frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}\right) +  \mu' \left( \frac{\partial^2 v_o}{\partial x^2} + \frac{\partial^2 u_o}{\partial x \partial y} \right)   +  \mu' \frac{\partial^2 w_o}{\partial x^2}   \bigg]\\
+         \label{xmomentum}
+\end{multline}
+
+Momentum equation along y :
+\begin{multline}
+  -i \omega \rho_o v' - i \omega v_o \rho'
+  \\ + \rho_o v'\frac{\partial u_o}{\partial x}+\rho_ou_o\frac{\partial  v'}{\partial x}+ v'u_o\frac{\partial \rho_o}{\partial x} + \rho_o v'\frac{\partial v_o}{\partial y}+\rho_ov_o\frac{\partial  v'}{\partial y}+ v'v_o\frac{\partial \rho_o}{\partial y} + i \beta \rho_o w_o  v'
+  \\ + \rho_ov_o\frac{\partial  u'}{\partial x}+\rho_o u'\frac{\partial v_o}{\partial x}+v_o u'\frac{\partial \rho_o}{\partial x} + \rho_ov_o\frac{\partial  v'}{\partial y}+\rho_o v'\frac{\partial v_o}{\partial y}+v_o v'\frac{\partial \rho_o}{\partial y} + i \beta \rho_ov_o w' 
+  \\ + \rho'v_o\frac{\partial u_o}{\partial x}+ \rho'u_o\frac{\partial v_o}{\partial x}+v_ou_o\frac{\partial  \rho'}{\partial x} +  \rho'v_o\frac{\partial v_o}{\partial y}+ \rho'v_o\frac{\partial v_o}{\partial y}+v_ov_o\frac{\partial  \rho'}{\partial y} +i \beta v_ow_o  \rho'
+  \\=-\frac{\partial p'}{\partial y} +\frac{1}{Re}\bigg[ \frac{\partial \mu_o}{\partial y} \left( \frac{\partial  u'}{\partial y} + \frac{\partial  v'}{\partial x} \right)  - \frac{\partial\mu_o}{\partial y}\frac{2}{3}\left(\frac{\partial  u'}{\partial x}+\frac{\partial  v'}{\partial y}+i \beta   w'\right) + \frac{\partial \mu_o}{\partial y} \left( \frac{\partial  v'}{\partial y} + \frac{\partial  v'}{\partial y} \right)   + \frac{\partial \mu_o}{\partial y} \left( \frac{\partial  w'}{\partial y} + i \beta v' \right)  
+  \\ + \frac{\partial  \mu'}{\partial y} \left( \frac{\partial u_o}{\partial y} + \frac{\partial v_o}{\partial x} \right)  - \frac{\partial \mu'}{\partial y}\frac{2}{3}\left(\frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}\right) + 2 \frac{\partial  \mu'}{\partial y}  \frac{\partial v_o}{\partial y}   + \frac{\partial  \mu'}{\partial y}  \frac{\partial w_o}{\partial y} 
+  \\ + \mu_o \left( \frac{\partial^2  u'}{\partial y^2} + \frac{\partial^2  v'}{\partial y \partial x} \right)  -\frac{2\mu_o}{3} \frac{\partial}{\partial y}\left(\frac{\partial  u'}{\partial x}+\frac{\partial  v'}{\partial y}+i \beta   w'\right) + 2 \mu_o  \frac{\partial^2  v'}{\partial y^2}   + \mu_o \left( \frac{\partial^2  w'}{\partial y^2} + i \beta \frac{\partial v'}{\partial y } \right)  
+  \\ +  \mu' \left( \frac{\partial^2 u_o}{\partial y^2} + \frac{\partial^2 v_o}{\partial y \partial x} \right)  -\frac{2 \mu'}{3} \frac{\partial}{\partial y}\left(\frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}\right) + 2 \mu' \left( \frac{\partial^2 v_o}{\partial y^2} \right)   +  \mu' \frac{\partial^2 w_o}{\partial y^2}  \bigg] \\
+      \label{ymomentum}
+\end{multline}
+
+Momentum equation along z :
+\begin{multline}
+\\- i \omega \rho_o  w' - i \beta w_o  \rho' 
+ \\ + \rho_o w'\frac{\partial u_o}{\partial x}+\rho_ou_o\frac{\partial  w'}{\partial x}+ w'u_o\frac{\partial \rho_o}{\partial x} + \rho_o w'\frac{\partial v_o}{\partial y}+\rho_ov_o\frac{\partial  w'}{\partial y}+ w'v_o\frac{\partial \rho_o}{\partial y} +i \beta \rho_o w_o  w' 
+ \\ + \rho_ow_o\frac{\partial  u'}{\partial x}+\rho_o u'\frac{\partial w_o}{\partial x}+w_o u'\frac{\partial \rho_o}{\partial x} + \rho_ow_o\frac{\partial  v'}{\partial y}+\rho_o v'\frac{\partial w_o}{\partial y}+w_o v'\frac{\partial \rho_o}{\partial y} + i \beta \rho_o w_o   w' 
+ \\ +  \rho'w_o\frac{\partial u_o}{\partial x}+ \rho'u_o\frac{\partial w_o}{\partial x}+w_ou_o\frac{\partial  \rho'}{\partial x} +  \rho'w_o\frac{\partial v_o}{\partial y}+ \rho'v_o\frac{\partial w_o}{\partial y}+w_ov_o\frac{\partial  \rho'}{\partial y} +i \beta w_o w_o \rho' 
+ \\=- i \beta p' +\frac{1}{Re}\bigg[ i \beta \mu' \frac{\partial w_o}{\partial x} - i \beta \mu' \frac{2}{3} \left(\frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}\right) + i \beta \mu' \frac{\partial w_o}{\partial y} + \mu_o \left( - \beta^2  u' + i \beta \frac{\partial  w'}{\partial x} \right) 
+ \\ -\frac{2\mu_o}{3} i \beta \left(\frac{\partial  u'}{\partial x}+\frac{\partial  v'}{\partial y}+i \beta  w' \right) + \mu_o \left( - \beta^2  v' +i \beta \frac{\partial  w'}{\partial y} \right)   + i 2 \beta \mu_o w' \bigg]\\
+       \label{zmomentum}
+\end{multline}
+
+Energy equation :
+\begin{multline}
+  \\ i \omega \rho_o \partial  T' +i \omega T_o   \rho' 
+ \\ + \rho_o T'\frac{\partial u_o}{\partial x}+\rho_ou_o\frac{\partial  T'}{\partial x}+ T'u_o\frac{\partial \rho_o}{\partial x} + \rho_o T'\frac{\partial v_o}{\partial y}+\rho_ov_o\frac{\partial  T'}{\partial y}+ T'v_o\frac{\partial \rho_o}{\partial y}+i \beta \rho_ow_o T' 
+ \\ + \rho_oT_o\frac{\partial  u'}{\partial x}+\rho_o u'\frac{\partial T_o}{\partial x}+T_o u'\frac{\partial \rho_o}{\partial x} + \rho_oT_o\frac{\partial  v'}{\partial y}+\rho_o v'\frac{\partial T_o}{\partial y}+T_o v'\frac{\partial \rho_o}{\partial y} + i \beta \rho_oT_o w' 
+ \\ +  \rho'T_o\frac{\partial u_o}{\partial x}+ \rho'u_o\frac{\partial T_o}{\partial x}+T_ou_o\frac{\partial  \rho'}{\partial x} +  \rho'T_o\frac{\partial v_o}{\partial y}+ \rho'v_o\frac{\partial T_o}{\partial y}+T_ov_o\frac{\partial  \rho'}{\partial y} +i \beta T_ow_o \rho' 
+ \\=(\gamma-1)\bigg[i \omega (p_0+p') + u_o\frac{\partial  p'}{\partial x} + v_o\frac{\partial  p'}{\partial y} +i \beta  w_o p' +  u'\frac{\partial p_o}{\partial x} +  v'\frac{\partial p_o}{\partial y}\bigg]
+ \\ + \frac{-1}{RePr} \bigg[ \frac{\partial  \kappa'}{\partial x}\frac{\partial T_o}{\partial x} +  \kappa'\frac{\partial^2 T_o}{\partial x^2} + \frac{\partial  \kappa'}{\partial y}\frac{\partial T_o}{\partial y} +  \kappa'\frac{\partial^2 T_o}{\partial y^2} + \frac{\partial \kappa_o}{\partial x}\frac{\partial  T'}{\partial x}  + \kappa_o\frac{\partial^2  T'}{\partial x^2} + \frac{\partial \kappa_o}{\partial y}\frac{\partial  T'}{\partial y} + \kappa_o\frac{\partial^2  T'}{\partial y^2} - \beta^2 \kappa_o T' \bigg]
+ \\+\frac{\gamma-1}{Re} \bigg[ \frac{\partial  u'}{\partial x} \left[ \mu_o \left( \frac{\partial u_o}{\partial x} + \frac{\partial u_o}{\partial x} \right)  -\mu_o\frac{2}{3}\left(\frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}\right)\right] + \frac{\partial  u'}{\partial y} \left[\mu_o\left(\frac{\partial v_o}{\partial x} + \frac{\partial u_o}{\partial y} \right)  \right] +i \beta \mu_o   u'  \frac{\partial w_o}{\partial x} 
+ \\ + \frac{\partial  v'}{\partial x} \left[\mu_o\left(\frac{\partial u_o}{\partial y} + \frac{\partial v_o}{\partial x} \right)  \right] + \frac{\partial  v'}{\partial y} \left[\mu_o\left(\frac{\partial v_o}{\partial y} + \frac{\partial v_o}{\partial y} \right)  -\mu_o\frac{2}{3}\left(\frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y} \right)\right] +i \beta \mu_o    v'  \frac{\partial w_o}{\partial y}
+ \\ +\mu_o \frac{\partial  w'}{\partial x}  \frac{\partial w_o}{\partial x}  +\mu_o \frac{\partial  w'}{\partial y} \frac{\partial w_o}{\partial y}+ i \beta   w'  \left[-\mu_o\frac{2}{3} \left(\frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}\right)\right]\\ + \frac{\partial u_o}{\partial x} \left[\mu_o\left(\frac{\partial  u'}{\partial x} + \frac{\partial  u'}{\partial x} \right)  -\mu_o\frac{2}{3}\left(\frac{\partial u'}{\partial x}+\frac{\partial v'}{\partial y}+i \beta  w' \right)\right] + \frac{\partial u_o}{\partial y} \left[\mu_o\left(\frac{\partial  v'}{\partial x} + \frac{\partial  u'}{\partial y} \right)  \right] + \frac{\partial v_o}{\partial x} \left[\mu_o\left(\frac{\partial  u'}{\partial y} + \frac{\partial  v'}{\partial x} \right)  \right] 
+ \\+ \frac{\partial v_o}{\partial y} \left[\mu_o\left(\frac{\partial  v'}{\partial y} + \frac{\partial  v'}{\partial y} \right)  -\mu_o\frac{2}{3}\left(\frac{\partial u'}{\partial x}+\frac{\partial v'}{\partial y}+i \beta w' \right)\right]  + \frac{\partial w_o}{\partial x} \left[\mu_o\left(i \beta u' + \frac{\partial  w'}{\partial x} \right)  \right] + \frac{\partial w_o}{\partial y} \left[\mu_o\left(i \beta v' + \frac{\partial  w'}{\partial y} \right)  \right]  
+ \\ + \frac{\partial u_o}{\partial x} \left[ \mu'\left(\frac{\partial  u'}{\partial x} + \frac{\partial  u'}{\partial x} \right)  - \mu'\frac{2}{3}\left(\frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y} \right)\right] + \frac{\partial u_o}{\partial y} \left[ \mu'\left(\frac{\partial  v'}{\partial x} + \frac{\partial  u'}{\partial y} \right)  \right] + \frac{\partial v_o}{\partial x} \left[ \mu'\left(\frac{\partial  u'}{\partial y} + \frac{\partial  v'}{\partial x} \right)  \right] 
+  \\+ \frac{\partial v_o}{\partial y} \left[ \mu'\left(\frac{\partial  v'}{\partial y} + \frac{\partial  v'}{\partial y} \right)  - \mu'\frac{2}{3}\left(\frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y} \right)\right] + \frac{\partial w_o}{\partial x} \left[ \mu'\left(i \beta u'  + \frac{\partial  w'}{\partial x} \right)  \right] + \frac{\partial w_o}{\partial y} \left[ \mu'\left(i \beta v' + \frac{\partial  w'}{\partial y} \right)  \right] \bigg]\\
+       \label{energy}
+\end{multline}
+\end{comment}
+
+
+
+\section{\section{}}

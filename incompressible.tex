@@ -1,0 +1,78 @@
+
+
+
+
+\documentclass[ border=0pt, a4paper, 11pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,amsmath,amsfonts,amssymb}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usetikzlibrary{positioning, shapes}
+\usepackage{xcolor}
+
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\definecolor{pprime1}{RGB}{89,167,167}
+\definecolor{pprime2}{RGB}{45,164,170}
+\definecolor{pprime3}{RGB}{82,162,161}
+\definecolor{brown}{RGB}{165,42,42}
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{transparent}
+\usetikzlibrary{patterns}
+
+\numberwithin{equation}{section}
+\newcommand{\Rho}{\textcolor{violet}{\rho'}}
+\renewcommand{\u}{\textcolor{red}{u'}}
+\renewcommand{\v}{\textcolor{green}{v'}}
+\newcommand{\w}{\textcolor{blue}{w'}}
+\newcommand{\p}{\textcolor{cyan}{p'}}
+\newcommand{\T}{\textcolor{pink}{T'}}
+\newcommand{\Mu}{\textcolor{magenta}{\mu'}}
+\newcommand{\Kappa}{\textcolor{yellow}{\kappa'}}
+
+\begin{document}
+
+
+
+\section{annex}
+
+
+
+continuity
+\begin{equation}
+ \rho\frac{\partial \u }{\partial x} + \rho\frac{\partial \v }{\partial y} + \rho\frac{\partial \w }{\partial z}  =0
+\end{equation}
+
+x momentum
+\begin{multline}
+\\\rho \frac{\partial \u }{\partial t} + \rho \u \frac{\partial u_o}{\partial x} + \rho u_o\frac{\partial \u }{\partial x} + \rho \u \frac{\partial v_o}{\partial y} + \rho v_o\frac{\partial \u }{\partial y} + \rho w_o\frac{\partial \u }{\partial z} + \rho u_o\frac{\partial \u }{\partial x} + \rho \u \frac{\partial u_o}{\partial x} + \rho u_o\frac{\partial \v }{\partial y} + \rho \v \frac{\partial u_o}{\partial y} + \rho u_o\frac{\partial \w }{\partial z}\\=-\frac{\partial \p }{\partial x} + \frac{1}{Re} \bigg(   \mu \frac{\partial^2 \u  }{\partial x^2} + \mu \frac{\partial^2 \u  }{\partial x \partial x } + \left(-\frac{2\mu }{3}\frac{\partial^2 \u }{\partial x^2}\right) + \left(-\frac{2\mu}{3}\frac{\partial^2 \v }{\partial x\partial y}\right) + \left(-\frac{2\mu}{3}\frac{\partial^2 \w }{\partial x\partial z}\right) + \mu \frac{\partial^2 \v  }{\partial x^2} + \mu \frac{\partial^2 \u  }{\partial x \partial y } + \mu \frac{\partial^2 \w  }{\partial x^2} + \mu \frac{\partial^2 \u  }{\partial x \partial z } \bigg)\\
+\end{multline}
+
+y momentum
+\begin{multline}
+\\\rho \frac{\partial \v }{\partial t}  + \rho \v \frac{\partial u_o}{\partial x} + \rho u_o\frac{\partial \v }{\partial x}  + \rho \v \frac{\partial v_o}{\partial y} + \rho v_o\frac{\partial \v }{\partial y}  + \rho w_o\frac{\partial \v }{\partial z} + \rho v_o\frac{\partial \u }{\partial x} + \rho \u \frac{\partial v_o}{\partial x} + \rho v_o\frac{\partial \v }{\partial y} + \rho \v \frac{\partial v_o}{\partial y} + \rho v_o\frac{\partial \w }{\partial z} \\=-\frac{\partial \p }{\partial y} + \frac{1}{Re}\bigg(  \mu\frac{\partial^2 \u }{\partial y^2} + \mu\frac{\partial^2 \v }{\partial y \partial x}  + \left(-\frac{2\mu}{3}\frac{\partial^2 \u }{\partial y\partial x}\right) + \left(-\frac{2\mu}{3}\frac{\partial^2 \v }{\partial y^2}\right) + \left(-\frac{2\mu}{3}\frac{\partial^2 \w }{\partial y\partial z}\right) + \mu\frac{\partial^2 \v }{\partial y^2} + \mu\frac{\partial^2 \v }{\partial y \partial y}  + \mu\frac{\partial^2 \w }{\partial y^2} + \mu\frac{\partial^2 \v }{\partial y \partial z} \bigg)\\
+\end{multline}
+
+z momentum
+\begin{multline}
+\\\rho \frac{\partial \w }{\partial t} + \rho \w \frac{\partial u_o}{\partial x} + \rho u_o\frac{\partial \w }{\partial x}  + \rho \w \frac{\partial v_o}{\partial y} + \rho v_o\frac{\partial \w }{\partial y}  + \rho w_o\frac{\partial \w }{\partial z}  + \rho w_o\frac{\partial \u }{\partial x} + \rho \u \frac{\partial w_o}{\partial x} + \rho w_o\frac{\partial \v }{\partial y} + \rho \v \frac{\partial w_o}{\partial y} + \rho w_o\frac{\partial \w }{\partial z} \\ =-\frac{\partial \p }{\partial z} +\frac{1}{Re}\bigg ( \mu\frac{\partial^2 \u }{\partial z^2} + \mu\frac{\partial^2 \w }{\partial z \partial x} + \left(-\frac{2}{3} \frac{\partial\mu}{\partial z}\frac{\partial \u }{\partial x}\right) + \left(- \frac{2}{3}\frac{\partial\mu}{\partial z}\frac{\partial \v }{\partial y}\right) + \left(- \frac{2}{3}\frac{\partial\mu}{\partial z}\frac{\partial \w }{\partial z}\right) + \mu\frac{\partial^2 \v }{\partial z^2} + \mu\frac{\partial^2 \w }{\partial z \partial y} + \mu\frac{\partial^2 \w }{\partial z^2} + \mu\frac{\partial^2 \w }{\partial z \partial z}\bigg)\\
+\end{multline}
+
+\begin{multline}
+\\\rho \frac{\partial \T }{\partial t}  + \rho \T \frac{\partial u_o}{\partial x} + \rho u_o\frac{\partial \T }{\partial x} + \rho \T \frac{\partial v_o}{\partial y} + \rho v_o\frac{\partial \T }{\partial y} + \rho w_o\frac{\partial \T }{\partial z} + \rho T_o\frac{\partial \u }{\partial x} + \rho \u \frac{\partial T_o}{\partial x} + \rho T_o\frac{\partial \v }{\partial y} + \rho \v \frac{\partial T_o}{\partial y} + \rho T_o\frac{\partial \w }{\partial z} \\=-\frac{ \p }{\partial t} + u_o\frac{\partial \p }{\partial x} + v_o\frac{\partial \p }{\partial y} + w_o\frac{\partial \p }{\partial z}\\ +\frac{-1}{RePr} \bigg( \frac{\partial  \Kappa }{\partial x}\frac{\partial T_o}{\partial x} +  \Kappa \frac{\partial^2 T_o}{\partial x^2} + \frac{\partial  \Kappa }{\partial y}\frac{\partial T_o}{\partial y} +  \Kappa \frac{\partial^2 T_o}{\partial y^2} +  \Kappa \frac{\partial^2 T_o}{\partial z^2} + \frac{\partial \kappa_o}{\partial x}\frac{\partial \T }{\partial x} + \kappa_o\frac{\partial^2 \T }{\partial x^2} + \frac{\partial \kappa_o}{\partial y}\frac{\partial \T }{\partial y} + \kappa_o\frac{\partial^2 \T }{\partial y^2} + \kappa_o\frac{\partial^2 \T }{\partial z^2}\bigg)\\ + \mu \frac{\partial \u }{\partial x} \frac{\partial u_o}{\partial x} + \mu \frac{\partial \u }{\partial x} \frac{\partial u_o}{\partial x} + \left[-\mu \frac{2}{3}\frac{\partial \u }{\partial x}\left(                 \frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}                \right)\right]  + \mu \frac{\partial \u }{\partial y} \frac{\partial v_o}{\partial x} + \mu \frac{\partial \u }{\partial y} \frac{\partial u_o}{\partial y} + \frac{\partial \u }{\partial z} \mu  \frac{\partial w_o}{\partial x}\\ + \mu \frac{\partial \v }{\partial x} \frac{\partial u_o}{\partial y} + \mu \frac{\partial \v }{\partial x} \frac{\partial v_o}{\partial x} + \mu \frac{\partial \v }{\partial y} \frac{\partial v_o}{\partial y} + \mu \frac{\partial \v }{\partial y} \frac{\partial v_o}{\partial y} + \left[-\mu \frac{2}{3}\frac{\partial \v }{\partial y}\left(                 \frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}                \right)\right]  + \frac{\partial \v }{\partial z} \mu  \frac{\partial w_o}{\partial y}\\ + \mu \frac{\partial \w }{\partial x} \frac{\partial w_o}{\partial x} + \mu \frac{\partial \w }{\partial y} \frac{\partial w_o}{\partial y} + \left[-\mu \frac{2}{3}\frac{\partial \w }{\partial z}\left(                 \frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}                \right)\right] \\ + \mu \frac{\partial u_o}{\partial x} \frac{\partial \u }{\partial x} + \mu \frac{\partial u_o}{\partial x} \frac{\partial \u }{\partial x} + \left(-\mu \frac{2}{3}\frac{\partial \u }{\partial x}\right) + \left(-\mu \frac{2}{3}\frac{\partial \v }{\partial y}\right) + \left(-\mu \frac{2}{3}\frac{\partial \w }{\partial z}\right) + \mu \frac{\partial u_o}{\partial y} \frac{\partial \v }{\partial x} + \mu \frac{\partial u_o}{\partial y} \frac{\partial \u }{\partial y}\\ + \mu \frac{\partial v_o}{\partial x} \frac{\partial \u }{\partial y} + \mu \frac{\partial v_o}{\partial x} \frac{\partial \v }{\partial x} + \mu \frac{\partial v_o}{\partial y} \frac{\partial \v }{\partial y} + \mu \frac{\partial v_o}{\partial y} \frac{\partial \v }{\partial y} + \left(-\mu \frac{2}{3}\frac{\partial \u }{\partial x}\right) + \left(-\mu \frac{2}{3}\frac{\partial \v }{\partial y}\right) + \left(-\mu \frac{2}{3}\frac{\partial \w }{\partial z}\right)\\ + \mu \frac{\partial w_o}{\partial x} \frac{\partial \u }{\partial z} + \mu \frac{\partial w_o}{\partial x} \frac{\partial \w }{\partial x} + \mu \frac{\partial w_o}{\partial y} \frac{\partial \v }{\partial z} + \mu \frac{\partial w_o}{\partial y} \frac{\partial \w }{\partial y}\\
+\end{multline}
+
+
+\begin{flalign} A12&= \rho\frac{\partial \u }{\partial x}\\[-1mm]A13&=\rho\frac{\partial \v }{\partial y}\\[-1mm]A14&=\rhoi \beta \w \\[-1mm]A22&=rho i \omega \u  + \rho \u \frac{\partial u_o}{\partial x} + \rho u_o\frac{\partial \u }{\partial x} + \rho \u \frac{\partial v_o}{\partial y} + \rho v_o\frac{\partial \u }{\partial y} + \rho w_oi \beta \u  + \rho u_o\frac{\partial \u }{\partial x} + \rho \u \frac{\partial u_o}{\partial x}\nonumber\\& + \frac{1}{Re} \bigg(   \mu \frac{\partial^2 \u  }{\partial x^2}  + \mu \frac{\partial^2 \u  }{\partial x \partial x } + \left(-\frac{2\mu }{3}\frac{\partial^2 \u }{\partial x^2}\right) + \mu \frac{\partial^2 \u  }{\partial x \partial y } + \mu \frac{\partial^2 \u  }{\partial x \partial z } \bigg)\\[-1mm]A23&=\rho u_o\frac{\partial \v }{\partial y} + \rho \v \frac{\partial u_o}{\partial y} + \frac{1}{Re}\bigg( \left(-\frac{2\mu}{3}\frac{\partial^2 \v }{\partial x\partial y}\right) + \mu \frac{\partial^2 \v  }{\partial x^2}\bigg)\\[-1mm]A24&=\rho u_oi \beta \w  + \frac{1}{Re}\bigg(  \left(-\frac{2\mu}{3}\frac{\partial^2 \w }{\partial x\partial z}\right) + \mu \frac{\partial^2 \w  }{\partial x^2}\bigg)\\[-1mm]A25&=-\frac{\partial \p }{\partial x}\\[-1mm]A32&=\rho v_o\frac{\partial \u }{\partial x} + \rho \u \frac{\partial v_o}{\partial x} + \frac{1}{Re}\bigg(  \mu\frac{\partial^2 \u }{\partial y^2} +  \left(-\frac{2\mu}{3}\frac{\partial^2 \u }{\partial y\partial x}\right)\bigg)\\[-1mm]A33&=rho i \omega \v   + \rho \v \frac{\partial u_o}{\partial x} + \rho u_o\frac{\partial \v }{\partial x}  + \rho \v \frac{\partial v_o}{\partial y} + \rho v_o\frac{\partial \v }{\partial y}  + \rho w_oi \beta \v \nonumber\\& + \rho v_o\frac{\partial \v }{\partial y} + \rho \v \frac{\partial v_o}{\partial y} + \frac{1}{Re}\bigg(  \mu\frac{\partial^2 \v }{\partial y \partial x}  + \left(-\frac{2\mu}{3}\frac{\partial^2 \v }{\partial y^2}\right) + \mu\frac{\partial^2 \v }{\partial y^2} + \mu\frac{\partial^2 \v }{\partial y \partial y} \nonumber\\& + \mu\frac{\partial^2 \v }{\partial y \partial z} \bigg)\\[-1mm]A34&=\rho v_oi \beta \w   + \frac{1}{Re}\bigg(  \left(-\frac{2\mu}{3}\frac{\partial^2 \w }{\partial y\partial z}\right) + \mu\frac{\partial^2 \w }{\partial y^2}\bigg)\\[-1mm]\nonumber\end{flalign}   \begin{flalign}A35&=-\frac{\partial \p }{\partial y}\\[-1mm]A42&=\rho w_o\frac{\partial \u }{\partial x} + \rho \u \frac{\partial w_o}{\partial x} + -i \beta \p  +\frac{1}{Re}\bigg ( \mu(- \beta^2 \u ) + \left(-\frac{2}{3} \frac{\partial\mu}{\partial z}\frac{\partial \u }{\partial x}\right)\bigg)\\[-1mm]A43&=\rho w_o\frac{\partial \v }{\partial y} + \rho \v \frac{\partial w_o}{\partial y} + \frac{1}{Re}\bigg(  \left(- \frac{2}{3}\frac{\partial\mu}{\partial z}\frac{\partial \v }{\partial y}\right) + \mu(- \beta^2 \v )\bigg)\\[-1mm]A44&=rho i \omega \w  + \rho \w \frac{\partial u_o}{\partial x} + \rho u_o\frac{\partial \w }{\partial x}  + \rho \w \frac{\partial v_o}{\partial y} + \rho v_o\frac{\partial \w }{\partial y}  + \rho w_oi \beta \w  \nonumber\\& + \rho w_oi \beta \w    + \frac{1}{Re}\bigg(  \mu\frac{\partial^2 \w }{\partial z \partial x} + \left(- \frac{2}{3}\frac{\partial\mu}{\partial z}i \beta \w \right) + \mu\frac{\partial^2 \w }{\partial z \partial y} + \mu(- \beta^2 \w ) + \mu\frac{\partial^2 \w }{\partial z \partial z}\bigg)\nonumber&\\[-1mm]A45&=-i \beta \p  +\frac{1}{Re}\bigg ( \mu(- \beta^2 \u )\\[-1mm]A52&=\rho T_o\frac{\partial \u }{\partial x} + \rho \u \frac{\partial T_o}{\partial x} +\frac{\gamma-1}{Re} \bigg( \mu \frac{\partial \u }{\partial x} \frac{\partial u_o}{\partial x} + \mu \frac{\partial \u }{\partial x} \frac{\partial u_o}{\partial x} + \left[-\mu \frac{2}{3}\frac{\partial \u }{\partial x}\left(                 \frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}                \right)\right]  + \mu \frac{\partial \u }{\partial y} \frac{\partial v_o}{\partial x} + \mu \frac{\partial \u }{\partial y} \frac{\partial u_o}{\partial y}\nonumber\\& + i \beta \u  \mu  \frac{\partial w_o}{\partial x} + \mu \frac{\partial u_o}{\partial x} \frac{\partial \u }{\partial x} + \mu \frac{\partial u_o}{\partial x} \frac{\partial \u }{\partial x} + \left(-\mu \frac{2}{3}\frac{\partial \u }{\partial x}\right) + \mu \frac{\partial u_o}{\partial y} \frac{\partial \u }{\partial y} + \mu \frac{\partial v_o}{\partial x} \frac{\partial \u }{\partial y} + \left(-\mu \frac{2}{3}\frac{\partial \u }{\partial x}\right) + \mu \frac{\partial w_o}{\partial x} i \beta \u\bigg) \nonumber&\\[-1mm]A53&=\rho T_o\frac{\partial \v }{\partial y} + \rho \v \frac{\partial T_o}{\partial y} +\frac{\gamma-1}{Re} \bigg( \mu \frac{\partial \v }{\partial x} \frac{\partial u_o}{\partial y} + \mu \frac{\partial \v }{\partial x} \frac{\partial v_o}{\partial x} + \mu \frac{\partial \v }{\partial y} \frac{\partial v_o}{\partial y} + \mu \frac{\partial \v }{\partial y} \frac{\partial v_o}{\partial y}\nonumber\\& + \left[-\mu \frac{2}{3}\frac{\partial \v }{\partial y}\left(                 \frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}                \right)\right]  + i \beta \v  \mu  \frac{\partial w_o}{\partial y} + \left(-\mu \frac{2}{3}\frac{\partial \v }{\partial y}\right) + \mu \frac{\partial u_o}{\partial y} \frac{\partial \v }{\partial x} + \mu \frac{\partial v_o}{\partial x} \frac{\partial \v }{\partial x} + \mu \frac{\partial v_o}{\partial y} \frac{\partial \v }{\partial y}\nonumber\\& + \mu \frac{\partial v_o}{\partial y} \frac{\partial \v }{\partial y} + \left(-\mu \frac{2}{3}\frac{\partial \v }{\partial y}\right) + \mu \frac{\partial w_o}{\partial y} i \beta \v\bigg)\\[-1mm]\nonumber\end{flalign}   \begin{flalign}A54&=\rho T_oi \beta \w   +\frac{\gamma-1}{Re} \bigg( \mu \frac{\partial \w }{\partial x} \frac{\partial w_o}{\partial x} + \mu \frac{\partial \w }{\partial y} \frac{\partial w_o}{\partial y} + \left[-\mu \frac{2}{3}i \beta \w \left(                 \frac{\partial u_o}{\partial x}+\frac{\partial v_o}{\partial y}                \right)\right]  + \left(-\mu \frac{2}{3}i \beta \w \right) + \left(-\mu \frac{2}{3}i \beta \w \right)\nonumber\\& + \mu \frac{\partial w_o}{\partial x} \frac{\partial \w }{\partial x} + \mu \frac{\partial w_o}{\partial y} \frac{\partial \w }{\partial y}\bigg)\\[-1mm]A55&=(\gamma-1) \bigg(-\frac{ \p }{\partial t} + u_o\frac{\partial \p }{\partial x} + v_o\frac{\partial \p }{\partial y} + w_oi \beta \p \bigg) \\[-1mm]A56&=rho i \omega \T   + \rho \T \frac{\partial u_o}{\partial x} + \rho u_o\frac{\partial \T }{\partial x} + \rho \T \frac{\partial v_o}{\partial y} + \rho v_o\frac{\partial \T }{\partial y} + \rho w_oi \beta \T  +\frac{-1}{RePr} \bigg( \frac{\partial \kappa_o}{\partial x}\frac{\partial \T }{\partial x}\nonumber\\& + \kappa_o\frac{\partial^2 \T }{\partial x^2} + \frac{\partial \kappa_o}{\partial y}\frac{\partial \T }{\partial y} + \kappa_o\frac{\partial^2 \T }{\partial y^2} + \kappa_o(- \beta^2 \T ) \bigg)\\[-1mm]A58&= \frac{-1}{RePr} \bigg(  \frac{\partial  \Kappa }{\partial x}\frac{\partial T_o}{\partial x} +  \Kappa \frac{\partial^2 T_o}{\partial x^2} + \frac{\partial  \Kappa }{\partial y}\frac{\partial T_o}{\partial y} +  \Kappa \frac{\partial^2 T_o}{\partial y^2} +  \Kappa \frac{\partial^2 T_o}{\partial z^2}\bigg)\\[-1mm] \nonumber\end{flalign}
+
+
+
+
+
+
+
+
+\end{document}
